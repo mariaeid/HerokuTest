@@ -27,12 +27,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-CORS_ORIGIN_ALLOW_ALL=True
-
 
 # Application definition
 
 INSTALLED_APPS = [
+    'corsheaders',
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     'sendemail.apps.SendemailConfig',
@@ -41,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'corsheaders',
     'rest_framework',
     'environmentalProject',
     'mainContent',
@@ -55,10 +53,10 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'django.middleware.common.BrokenLinkEmailsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -157,6 +155,8 @@ USE_TZ = True
 # CORS_ORIGIN_WHITELIST = (
 #     'http://localhost:3000',
 #  )
+
+CORS_ORIGIN_ALLOW_ALL=True
 
 # Configure app for Heroku deployment
 django_heroku.settings(locals())
