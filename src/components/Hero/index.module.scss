@@ -1,0 +1,81 @@
+@import "../../variables.scss";
+
+video {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  z-index: 0;
+  object-fit: cover;
+  object-position: 35% 100%;
+}
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+
+  .overlayContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    padding-top: 5rem;
+
+    .title {
+      padding-left: $distanceSmall;
+      padding-right: $distanceSmall;
+      text-align: center;
+      font-weight: 800;
+      font-size: 36px;
+      color: #fff;
+    }
+
+    .readMoreContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 2rem;
+      cursor: pointer;
+
+      .text {
+        margin-bottom: 0.5rem;
+        font-weight: 800;
+        font-size: 18px;
+        color: #fff;
+      }
+
+      .icon {
+        animation-name: upDown;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+      }
+
+      img {
+        height: 45%;
+        margin-bottom: $distanceSmall;
+      }
+    }
+  }
+}
+
+@keyframes upDown {
+  0% {
+    transform: translateY(0rem);
+  }
+  50% {
+    transform: translateY(0.2rem);
+  }
+  100% {
+    transform: translateY(0rem);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .overlayContainer {
+    padding-top: 2.5rem;
+  }
+}

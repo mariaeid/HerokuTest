@@ -1,0 +1,9 @@
+@import "../../variables.scss";
+
+.container {
+  margin-bottom: $distanceSmall;
+
+  .rowContainer {
+    display: flex;
+  }
+}
