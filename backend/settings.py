@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+CORS_ORIGIN_ALLOW_ALL=True
 
 # Application definition
 
@@ -155,8 +156,6 @@ USE_TZ = True
 # CORS_ORIGIN_WHITELIST = (
 #     'http://localhost:3000',
 #  )
-
-CORS_ORIGIN_ALLOW_ALL=True
 
 # Configure app for Heroku deployment
 django_heroku.settings(locals())
