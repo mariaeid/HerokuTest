@@ -157,7 +157,6 @@ CORS_ORIGIN_WHITELIST = (
 
 # Configure app for Heroku deployment
 django_heroku.settings(locals())
-heroku config:set DISABLE_COLLECTSTATIC=1
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
