@@ -15,7 +15,7 @@ class Steps extends Component {
 
   async componentDidMount() {
     try {
-      axios.get(base_url + "/api/step").then(res => {
+      axios.get(base_url + "/api/steps").then(res => {
         this.setState({
           steps: res.data
         });
